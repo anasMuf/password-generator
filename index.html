@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Password Generator</h1>
+        <div class="input-group">
+            <label for="length">Password Length:</label>
+            <input type="number" id="length" min="8" max="32" value="12">
+        </div>
+        <div class="input-group">
+            <label for="url">URL (optional):</label>
+            <input type="text" id="url">
+        </div>
+        <div class="input-group">
+            <label>Character Sets</label>
+            <label for="charset_lowercase"><input type="checkbox" name="charset" id="charset_lowercase" class="charsets" value="lowercase" checked>LOWERCASE</label>
+            <label for="charset_uppercase"><input type="checkbox" name="charset" id="charset_uppercase" class="charsets" value="uppercase" checked>UPPERCASE</label>
+            <label for="charset_number"><input type="checkbox" name="charset" id="charset_number" class="charsets" value="number" checked>NUMBER</label>
+            <label for="charset_symbols"><input type="checkbox" name="charset" id="charset_symbols" class="charsets" value="symbols" checked>SYMBOL</label>
+        </div>
+        <button id="generate">Generate Password</button>
+        <small id="info">
+            Using a combination of lowercase, uppercase, number, and symbol has an effect on the strength of the password.
+        </small>
+        <div id="password-container">
+            <input type="text" id="password" readonly>
+            <button id="copy">Copy</button>
+        </div>
+        <small id="strength_indicator"></small>
+        <small id="error" style="display: none;"></small>
+    </div>
+    <div class="container">
+        <h1>Password History</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Url</th>
+                    <th>Password</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
